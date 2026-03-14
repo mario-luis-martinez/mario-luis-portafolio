@@ -1,0 +1,7 @@
+# --- robots.txt básico para indexación rápida ---
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://marioveloper.com/sitemap.xml
