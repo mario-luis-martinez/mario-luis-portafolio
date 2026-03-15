@@ -10,9 +10,9 @@
 :root {
     /* type */
     --ff: "Manrope", sans-serif;
-    --h1: 700 1.5rem/1.2em var(--ff);
-    --h2: 700 1.25rem/1.4em var(--ff);
-    --h3: 700 1.125rem/1.4em var(--ff);
+    --h1: 700 2rem/1.2em var(--ff);
+    --h2: 700 1.5rem/1.4em var(--ff);
+    --h3: 700 1.25rem/1.4em var(--ff);
     --h4: 700 1rem/1.4em var(--ff);
     --p: 400 1rem/1.6em var(--ff);
     --small: 400 0.75rem/1.6em var(--ff);
@@ -38,8 +38,8 @@
 
 body.light {
     /* colors */
-    --bg-dark: oklch(0.92 0 264);
-    --bg: oklch(0.96 0 264);
+    --bg-dark: oklch(0.98 0 264);
+    --bg: oklch(0.94 0 264);
     --bg-light: oklch(1 0 264);
     --text: oklch(0.15 0 264);
     --text-muted: oklch(0.4 0 264);
@@ -60,7 +60,7 @@ body {
     color: var(--text-muted);
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    gap: 5rem;
 }
 
 main {
@@ -139,12 +139,12 @@ button:hover,
 
 a {
     text-decoration: none;
-    color: var(--text);
+    color: var(--primary);
     transition: var(--transition);
 }
 
 a:hover {
-    color: var(--primary);
+    color: var(--text);
     transition: var(--transition);
 }
 
@@ -155,7 +155,7 @@ header {
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    top: 0;
+    top: .5rem;
 }
 
 .mario {
@@ -183,10 +183,29 @@ nav {
     justify-content: center;
 }
 
+/* Hero */
+#hero img {
+    max-width: 20rem;
+    border-radius: 50%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.col h1 {
+    align-self: self-start;
+}
+
+
 /* cards */
-.cards {
+.cards,
+#hero {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(25rem, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
     gap: 1rem;
 }
 
@@ -194,8 +213,11 @@ nav {
 .card {
     background: var(--bg);
     border-radius: 0.5rem;
-    padding: 1rem 1.5rem;
     transition: var(--transition);
+}
+
+.card .container {
+    padding: 1rem .75rem;
 }
 
 .card img {
@@ -204,9 +226,32 @@ nav {
     border-top-right-radius: 0.5rem;
 }
 
-.card a{
-    color: var(--primary);
+.card p {
+    padding-bottom: 1rem;
 }
+
+.card a {
+    margin-right: 1rem;
+}
+
+/* Posts */
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.post {
+    background-color: var(--bg);
+    padding: 1rem .75rem;
+    border-radius: 0.5rem;
+}
+
+.post p {
+    margin-bottom: 1rem;
+    max-width: 56rem;
+}
+
 
 /* Footer */
 
@@ -218,4 +263,40 @@ ion-icon {
 /* animations */
 h1 ion-icon {
     transform: rotate(15deg);
+}
+
+/*Articulos*/
+.content{
+    max-width: 80ch;
+    align-self: center;
+}
+.content img {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid var(--bg);
+}
+.authorbox{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: 1rem;
+    background-color: var(--bg);
+    border-radius: 0.5rem;
+    padding: 1rem .75rem;
+}
+.authorbox-content,
+.authorbox-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.authorbox img{
+    border-radius: 50%;
+    width: 50%;
+}
+
+.blog-nav{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5rem;
 }
