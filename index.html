@@ -25,7 +25,7 @@
 
 </head>
 
-<body>
+<body class="article">
     <header>
         <a href="../" class="mario">
             <ion-icon name="code-slash-outline"></ion-icon>
@@ -36,17 +36,16 @@
         </button>
     </header>
     <main>
-        <section id="hero">
+        <section id="hero" class="grid">
             <div class="col">
-                <h1>Hola soy Mario Luis</h1>
-                <p><br>Soy un desarrollador y diseñador web. Llevo más 10 años escribiendo código y desde 2021
-                    inmerso en
-                    el ecosistema web.<br><br>He trabajado para personas y agencias de Marketing Digital en
-                    Estados
-                    Unidos, España y México.<br><br>Puedes enviarme un mensaje en <a
-                        href="https://www.linkedin.com/in/mario-luis-martinez/" target="_blank">LinkedIn</a> o explorar
+                <h1>Hola, soy Mario Luis.</h1>
+                <p><br>Desarrollador y diseñador web. Llevo más de 10 años escribiendo código y desde 2021 trabajando de
+                    lleno en el ecosistema web.<br><br>He colaborado con profesionales y agencias de marketing digital
+                    en Estados Unidos, España y México, creando sitios web claros, rápidos y funcionales.<br><br>Puedes
+                    enviarme un mensaje en <a href="https://www.linkedin.com/in/mario-luis-martinez/"
+                        target="_blank">LinkedIn</a> o explorar
                     mi
-                    código
+                    actividad
                     en <a href="https://github.com/mario-luis-martinez" target="_blank">Github</a>.</p>
             </div>
             <div class="col">
@@ -55,32 +54,25 @@
         </section>
         <section id="proyectos">
             <h2>Proyectos</h2>
-            <div class="cards">
+            <div class="cards grid">
                 <div class="card">
-                    <img src="img/placeholder.jpg" alt="">
-                    <div class="container">
-                        <h3>Titulo Proyecto </h3>
-                        <p>Descricion Proyecto</p>
-                        <a href="#">Ver Código <ion-icon name="logo-github"></ion-icon></a>
-                        <a href="#">Demo <ion-icon name="exit-outline"></ion-icon></a>
+                    <div>
+                        <h3><a href="#">Albion Online <ion-icon name="logo-github"></ion-icon></a></h3>
+                        <p>Sitio web completo con varias calculadoras del juego albion online</p>
+                    </div>
+                    <div>
+                        <span class="tag tag-html">HTML</span>
+                        <span class="tag tag-css">CSS</span>
+                        <span class="tag tag-js">Javascript</span>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="img/placeholder.jpg" alt="">
-                    <div class="container">
-                        <h3>Titulo Proyecto </h3>
-                        <p>Descricion Proyecto</p>
-                        <a href="#">Ver Código <ion-icon name="logo-github"></ion-icon></a>
-                        <a href="#">Demo <ion-icon name="exit-outline"></ion-icon></a>
+                    <div class="card-content">
+                        <h3><a href="#">Albion Online <ion-icon name="open-outline"></ion-icon></a></h3>
+                        <p>Sitio web completo con varias calculadoras del juego albion online</p>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="img/placeholder.jpg" alt="">
-                    <div class="container">
-                        <h3>Titulo Proyecto </h3>
-                        <p>Descricion Proyecto</p>
-                        <a href="#">Ver Código <ion-icon name="logo-github"></ion-icon></a>
-                        <a href="#">Demo <ion-icon name="exit-outline"></ion-icon></a>
+                    <div class="stack">
+                        <span class="tag tag-wp">WordPress</span>
                     </div>
                 </div>
             </div>
@@ -95,32 +87,25 @@
                     <a href="blog/solo-los-novatos-hacen-stios-web-hermosos.html">Leer Artículo Completo</a>
                 </div>
                 <div class="post">
-                    <h3>Titulo del articulo</h3>
+                    <h3>Solo los novatos hacen sitios web hermosos</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum necessitatibus quae vero harum
                         dolores aut porro officiis assumenda nobis eligendi.</p>
-                    <a href="#">Leer Artículo Completo</a>
-                </div>
-                <div class="post">
-                    <h3>Titulo del articulo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum necessitatibus quae vero harum
-                        dolores aut porro officiis assumenda nobis eligendi.</p>
-                    <a href="#">Leer Artículo Completo</a>
-                </div>
-                <div class="post">
-                    <h3>Titulo del articulo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum necessitatibus quae vero harum
-                        dolores aut porro officiis assumenda nobis eligendi.</p>
-                    <a href="#">Leer Artículo Completo</a>
+                    <a href="blog/solo-los-novatos-hacen-stios-web-hermosos.html">Leer Artículo Completo</a>
                 </div>
             </div>
         </section>
         <section id="contact">
-            <h2>Contacto</h2>
-            <p>marioveloper@gmail.com</p>
-            <p><a href="https://www.linkedin.com/in/mario-luis-martinez/" target="_blank">LinkedIn <ion-icon
-                        name="logo-linkedin"></ion-icon></a></p>
-            <p><a href="https://github.com/mario-luis-martinez" target="_blank">Github <ion-icon
-                        name="logo-github"></ion-icon></a></p>
+            <h2>Trabajemos juntos</h2>
+            <p>Si tienes una idea, un proyecto o necesitas ayuda con tu sitio web, estaré encantado de
+                escucharte.<br>Puedes escribirme directamente por <a href="mailto:marioveloper@gmail.com"> email</a> o
+                contactarme en <a href="https://www.linkedin.com/in/mario-luis-martinez/" target="_blank"> LinkedIn</a>.
+            </p>
+            <p>Copiar email:
+                <span id="email">marioveloper@gmail.com
+                    <ion-icon id="copyIcon" name="copy-outline"></ion-icon>
+                </span>
+                <span id="copyMessage"></span>
+            </p>
         </section>
     </main>
     <footer>

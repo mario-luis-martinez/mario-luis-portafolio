@@ -26,8 +26,13 @@
     --text: oklch(0.96 0 264);
     --text-muted: oklch(0.76 0 264);
     --primary: oklch(0.9 0.17 100);
-    --secondary: oklch(0.65 0.15 264);
+    --secondary: oklch(23.793% 0.0959 261.862);
     --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    --success: rgb(10, 221, 55);
+    --html: #fc470090;
+    --css: #6709ff90;
+    --js: #e8ec0090;
+    --wp: #097cff90;
     /* shadows */
     --shadow-s:
         inset 0 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015;
@@ -39,11 +44,11 @@
 body.light {
     /* colors */
     --bg-dark: oklch(0.98 0 264);
-    --bg: oklch(0.94 0 264);
+    --bg: oklch(0.90 0 264);
     --bg-light: oklch(1 0 264);
     --text: oklch(0.15 0 264);
     --text-muted: oklch(0.4 0 264);
-    --primary: oklch(0.65 0.15 264);
+    --primary: oklch(0.42 0.19 264);
     --secondary: oklch(0.9 0.17 100);
     --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
 }
@@ -55,7 +60,7 @@ html {
 
 body {
     margin: 1rem auto;
-    max-width: min(90vw, 1200px);
+    max-width: min(90vw, 80ch);
     background: var(--bg-dark);
     color: var(--text-muted);
     display: flex;
@@ -66,13 +71,18 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
 }
 
 section {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--bg);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
 }
 
 h1 {
@@ -101,7 +111,6 @@ h4 {
 p {
     font: var(--p);
     color: var(--text-muted);
-    max-width: 80ch;
 }
 
 .small,
@@ -110,8 +119,7 @@ small {
     letter-spacing: 0.1rem;
 }
 
-button,
-.btn {
+button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -130,8 +138,7 @@ button:focus {
     outline: none;
 }
 
-button:hover,
-.btn:hover {
+button:hover {
     background: var(--bg-light);
     box-shadow: var(--shadow-m);
     transition: var(--transition);
@@ -144,10 +151,13 @@ a {
 }
 
 a:hover {
-    color: var(--text);
+    border-bottom: 1px solid var(--primary);
     transition: var(--transition);
 }
 
+ion-icon {
+    color: var(--primary);
+}
 
 /* header */
 header {
@@ -155,13 +165,18 @@ header {
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    top: .5rem;
+    top: 0.5rem;
 }
 
 .mario {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    border: none;
+}
+
+.mario:hover {
+    border: none;
 }
 
 .logo-text {
@@ -169,9 +184,8 @@ header {
     margin: 0;
 }
 
-nav {
-    display: flex;
-    gap: 1rem;
+.logo-text:hover {
+    color: var(--primary);
 }
 
 .toggle-btn {
@@ -183,10 +197,15 @@ nav {
     justify-content: center;
 }
 
-/* Hero */
+/* --- Hero --- */
+#hero {
+    padding-top: 0;
+}
+
 #hero img {
     max-width: 20rem;
     border-radius: 50%;
+    background-color: var(--primary);
 }
 
 .col {
@@ -201,102 +220,82 @@ nav {
 }
 
 
-/* cards */
-.cards,
-#hero {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+/* --- Projects -- */
+.cards {
     gap: 1rem;
 }
 
-/* card */
 .card {
     background: var(--bg);
-    border-radius: 0.5rem;
-    transition: var(--transition);
-}
-
-.card .container {
-    padding: 1rem .75rem;
-}
-
-.card img {
-    width: 100%;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-}
-
-.card p {
-    padding-bottom: 1rem;
-}
-
-.card a {
-    margin-right: 1rem;
-}
-
-/* Posts */
-.posts {
+    border-radius: 0.25rem;
+    padding: 1rem 0.75rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
+.tag {
+    padding: .125rem .5rem;
+    border-radius: .25rem;
+}
+
+.tag-html {
+    background-color: var(--html);
+}
+
+.tag-css {
+    background-color: var(--css);
+}
+
+.tag-js {
+    background-color: var(--js);
+}
+
+.tag-wp {
+    background-color: var(--wp);
+}
+
+/* --- Posts --- */
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .post {
     background-color: var(--bg);
-    padding: 1rem .75rem;
+    padding: 1rem 0.75rem;
     border-radius: 0.5rem;
 }
 
 .post p {
     margin-bottom: 1rem;
-    max-width: 56rem;
 }
 
-
-/* Footer */
-
-/* icons */
-ion-icon {
+/* --- Contact --- */
+#email {
     color: var(--primary);
 }
 
-/* animations */
-h1 ion-icon {
-    transform: rotate(15deg);
+#email:hover {
+    opacity: 0.75;
+    cursor: pointer;
 }
 
-/*Articulos*/
-.content{
-    max-width: 80ch;
+#copyMessage {
+    color: var(--success);
+    font-size: 0.75rem;
+}
+
+
+/* --- Page Articles --- */
+.content {
+    padding-top: 0;
     align-self: center;
 }
+
 .content img {
     width: 100%;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     border: 1px solid var(--bg);
-}
-.authorbox{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
-    gap: 1rem;
-    background-color: var(--bg);
-    border-radius: 0.5rem;
-    padding: 1rem .75rem;
-}
-.authorbox-content,
-.authorbox-img{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.authorbox img{
-    border-radius: 50%;
-    width: 50%;
-}
-
-.blog-nav{
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 5rem;
 }

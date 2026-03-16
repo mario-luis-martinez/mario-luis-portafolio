@@ -39,3 +39,24 @@
         setTheme(isLight ? "dark" : "light");
     });
 })();
+
+const email = document.getElementById("email");
+const icon = document.getElementById("copyIcon");
+const message = document.getElementById("copyMessage");
+
+email.addEventListener("click", async () => {
+
+    try {
+        await navigator.clipboard.writeText(email.innerText);
+        message.textContent = "copiado con éxito";
+        icon.setAttribute("name", "checkmark-outline");
+
+        setTimeout(() => {
+            message.textContent = "";
+        }, 2000);
+
+    } catch (err) {
+        message.textContent = "No se pudo copiar";
+    }
+
+});
