@@ -151,7 +151,7 @@ a {
 }
 
 a:hover {
-    border-bottom: 1px solid var(--primary);
+    text-decoration: underline;
     transition: var(--transition);
 }
 
@@ -298,4 +298,15 @@ header {
     width: 100%;
     border-radius: 0.25rem;
     border: 1px solid var(--bg);
+}
+
+.back{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+.back a{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
