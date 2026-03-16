@@ -273,6 +273,10 @@ header {
 }
 
 /* --- Contact --- */
+#contact{
+    gap: 1rem;
+}
+
 #email {
     color: var(--primary);
 }
@@ -287,11 +291,11 @@ header {
     font-size: 0.75rem;
 }
 
-
 /* --- Page Articles --- */
 .content {
     padding-top: 0;
     align-self: center;
+    gap: 2rem;
 }
 
 .content img {
