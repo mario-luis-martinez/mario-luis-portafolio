@@ -1,0 +1,49 @@
+# Mario Luis — Portafolio Web
+
+Este repositorio contiene mi portafolio personal, desarrollado con HTML, CSS y JavaScript puro.
+
+El objetivo del proyecto es demostrar que se pueden crear sitios rápidos, optimizados y bien estructurados sin depender de frameworks innecesarios.
+
+## 🚀 Enfoque
+
+Este proyecto sigue una filosofía clara:
+- Simplicidad antes que sobreingeniería
+- Rendimiento como prioridad
+- Control total del código
+- Buenas prácticas de SEO técnico
+
+## 🛠️ Tecnologías utilizadas
+
+- HTML5 semántico
+- CSS moderno (incluyendo OKLCH para manejo de color)
+- JavaScript vanilla
+- Configuración de servidor con `.htaccess`
+
+## ⚙️ Características técnicas
+
+- 🌗 Modo claro / oscuro persistente usando `localStorage`
+- 🎨 Sistema de colores basado en OKLCH
+- ⚡ Sitio optimizado para carga rápida (sin frameworks)
+- 🔍 SEO técnico implementado:
+  - `robots.txt`
+  - `sitemap.xml`
+  - estructura limpia de HTML
+- 🔒 Configuración básica de seguridad y compresión desde `.htaccess`
+
+## 📈 Lo que aprendí
+
+Más allá del diseño y desarrollo, este proyecto me permitió profundizar en:
+
+- Configuración real de un entorno de producción
+- Control de indexación en buscadores
+- Optimización de rendimiento web sin herramientas externas
+- Uso de estándares modernos de CSS
+
+## 🌐 Demo
+
+👉 [Ver sitio en vivo](https://www.marioveloper.com/)
+*(agrega aquí tu dominio cuando lo tengas)*
+
+## 📌 Nota
+
+Este portafolio evoluciona constantemente. La idea no es solo mostrar proyectos, sino reflejar cómo pienso y construyo soluciones web.
