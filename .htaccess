@@ -1,7 +1,11 @@
+# ================================
 # Seguridad básica
+# ================================
 Options -Indexes
 
-# Compresión GZIP y Brotli
+# ================================
+# Compresión (GZIP + Brotli)
+# ================================
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
 </IfModule>
@@ -10,25 +14,58 @@ Options -Indexes
     AddOutputFilterByType BROTLI_COMPRESS text/html text/css application/javascript application/json image/svg+xml
 </IfModule>
 
-# Cache navegador
+# ================================
+# Cache del navegador
+# ================================
 <IfModule mod_expires.c>
     ExpiresActive On
+
     ExpiresByType text/html "access plus 1 hour"
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
+
     ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
 </IfModule>
 
-# Forzar HTTPS y www (si aplica)
+# ================================
+# Rewrites
+# ================================
 RewriteEngine On
-RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirección URLs sin trailing slash (opcional)
+# ----------------
+# Forzar HTTPS (sin www - recomendado)
+# ----------------
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://marioveloper.com%{REQUEST_URI} [L,R=301]
+
+# ----------------
+# Quitar .html de las URLs visibles
+# ----------------
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# ----------------
+# Servir archivos .html internamente
+# ----------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# ----------------
+# Trailing slash solo para carpetas
+# ----------------
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5})$
 RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
+
+# ================================
+# Seguridad extra (recomendado)
+# ================================
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
