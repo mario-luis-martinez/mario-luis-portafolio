@@ -1,7 +1,8 @@
 # Mario Luis — Portafolio Web
 
 <img width="1345" height="552" alt="Screenshot_57" src="https://github.com/user-attachments/assets/8f95297c-5535-490c-8ebe-2c2611d108b0" />
-👉 [Ver sitio en vivo](https://www.marioveloper.com/)
+
+👉 [Ver sitio en vivo](https://www.marioveloper.com/).
 
 Este repositorio contiene mi portafolio personal, desarrollado con HTML, CSS y JavaScript puro.
 
