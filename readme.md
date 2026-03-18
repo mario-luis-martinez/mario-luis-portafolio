@@ -42,7 +42,6 @@ Más allá del diseño y desarrollo, este proyecto me permitió profundizar en:
 ## 🌐 Demo
 
 👉 [Ver sitio en vivo](https://www.marioveloper.com/)
-*(agrega aquí tu dominio cuando lo tengas)*
 
 ## 📌 Nota
 
