@@ -24,15 +24,6 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
-    <!--FUENTES-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
-
-    <!--CSS-->
-    <link rel="stylesheet" href="/css/style.min.css">
-
-
 </head>
 
 <body class="article">
@@ -61,7 +52,8 @@
                     en <a href="https://github.com/mario-luis-martinez" target="_blank">Github</a>.</p>
             </div>
             <div class="col">
-                <img src="/img/mario-luis.webp" alt="Mario Luis - Desarrollador">
+                <img src="/img/mario-luis.webp" alt="Mario Luis - Desarrollador" width="320" height="320"
+                    fetchpriority="high" loading="eager">
             </div>
         </section>
         <section id="proyectos">
@@ -69,7 +61,7 @@
             <div class="cards grid">
                 <div class="card">
                     <div>
-                        <h3><a href="#">Albion Online <ion-icon name="logo-github"></ion-icon></a></h3>
+                        <h3><a href="#">Albion Online <!--<ion-icon name="logo-github"></ion-icon>--> </a></h3>
                         <p>Sitio web completo con varias calculadoras del juego albion online</p>
                     </div>
                     <div>
@@ -80,7 +72,7 @@
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <h3><a href="#">Albion Online <ion-icon name="open-outline"></ion-icon></a></h3>
+                        <h3><a href="#">Albion Online <!--<ion-icon name="open-outline"></ion-icon>--></a></h3>
                         <p>Sitio web completo con varias calculadoras del juego albion online</p>
                     </div>
                     <div class="stack">
@@ -114,7 +106,7 @@
             </p>
             <p>Copiar email:
                 <span id="email">marioveloper@gmail.com
-                    <ion-icon id="copyIcon" name="copy-outline"></ion-icon>
+                    <!--<ion-icon id="copyIcon" name="copy-outline"></ion-icon>-->
                 </span>
                 <span id="copyMessage"></span>
             </p>
@@ -126,7 +118,70 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="/js/script.js"></script>
+    <script>
+        (function () {
+            const body = document.body;
+            const toggleBtn = document.querySelector(".toggle-btn");
+            const THEME_KEY = "theme";
+
+            // Get system preference
+            function getSystemTheme() {
+                return window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light";
+            }
+
+            // Apply theme class to body
+            function applyTheme(theme) {
+                if (theme === "light") {
+                    body.classList.add("light");
+                } else {
+                    body.classList.remove("light");
+                }
+            }
+
+            // Get preferred theme (localStorage > system)
+            function getPreferredTheme() {
+                return localStorage.getItem(THEME_KEY) || getSystemTheme();
+            }
+
+            // Set theme and persist
+            function setTheme(theme) {
+                applyTheme(theme);
+                localStorage.setItem(THEME_KEY, theme);
+            }
+
+            // Initialize theme on load
+            setTheme(getPreferredTheme());
+
+            // Toggle theme on button click
+            toggleBtn.addEventListener("click", () => {
+                const isLight = body.classList.contains("light");
+                setTheme(isLight ? "dark" : "light");
+            });
+        })();
+
+        const email = document.getElementById("email");
+        const icon = document.getElementById("copyIcon");
+        const message = document.getElementById("copyMessage");
+
+        email.addEventListener("click", async () => {
+
+            try {
+                await navigator.clipboard.writeText(email.innerText);
+                message.textContent = "copiado con éxito";
+                /*icon.setAttribute("name", "checkmark-outline");*/
+
+                setTimeout(() => {
+                    message.textContent = "";
+                }, 2000);
+
+            } catch (err) {
+                message.textContent = "No se pudo copiar";
+            }
+
+        });
+    </script>
 </body>
 
 </html>
