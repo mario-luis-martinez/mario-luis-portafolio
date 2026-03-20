@@ -43,6 +43,15 @@ Más allá del diseño y desarrollo, este proyecto me permitió profundizar en:
 - Optimización de rendimiento web sin herramientas externas
 - Uso de estándares modernos de CSS
 
+## Métricas
+
+Mobile
+<img width="1352" height="561" alt="Screenshot_59" src="https://github.com/user-attachments/assets/b8ba3255-e8af-4090-b1e3-a1e4d15892e5" />
+
+Desktop
+<img width="1345" height="546" alt="Screenshot_60" src="https://github.com/user-attachments/assets/37fa19e5-f381-4aa5-b489-c3625015f370" />
+
+
 ## 🌐 Demo
 
 👉 [Ver sitio en vivo](https://www.marioveloper.com/)
