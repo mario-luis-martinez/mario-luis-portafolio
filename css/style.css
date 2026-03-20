@@ -42,7 +42,7 @@
 body.light {
     /* colors */
     --bg-dark: oklch(0.98 0 264);
-    --bg: oklch(0.90 0 264);
+    --bg: oklch(0.80 0 264);
     --bg-light: oklch(1 0 264);
     --text: oklch(0.15 0 264);
     --text-muted: oklch(0.4 0 264);
@@ -236,6 +236,7 @@ header {
 .tag {
     padding: .125rem .5rem;
     border-radius: .25rem;
+    color: var(--text);
 }
 
 .tag-html {
