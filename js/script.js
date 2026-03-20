@@ -1,62 +1,62 @@
 (function () {
-    const body = document.body;
-    const toggleBtn = document.querySelector(".toggle-btn");
-    const THEME_KEY = "theme";
+            const body = document.body;
+            const toggleBtn = document.querySelector(".toggle-btn");
+            const THEME_KEY = "theme";
 
-    // Get system preference
-    function getSystemTheme() {
-        return window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
-    }
+            // Get system preference
+            function getSystemTheme() {
+                return window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light";
+            }
 
-    // Apply theme class to body
-    function applyTheme(theme) {
-        if (theme === "light") {
-            body.classList.add("light");
-        } else {
-            body.classList.remove("light");
-        }
-    }
+            // Apply theme class to body
+            function applyTheme(theme) {
+                if (theme === "light") {
+                    body.classList.add("light");
+                } else {
+                    body.classList.remove("light");
+                }
+            }
 
-    // Get preferred theme (localStorage > system)
-    function getPreferredTheme() {
-        return localStorage.getItem(THEME_KEY) || getSystemTheme();
-    }
+            // Get preferred theme (localStorage > system)
+            function getPreferredTheme() {
+                return localStorage.getItem(THEME_KEY) || getSystemTheme();
+            }
 
-    // Set theme and persist
-    function setTheme(theme) {
-        applyTheme(theme);
-        localStorage.setItem(THEME_KEY, theme);
-    }
+            // Set theme and persist
+            function setTheme(theme) {
+                applyTheme(theme);
+                localStorage.setItem(THEME_KEY, theme);
+            }
 
-    // Initialize theme on load
-    setTheme(getPreferredTheme());
+            // Initialize theme on load
+            setTheme(getPreferredTheme());
 
-    // Toggle theme on button click
-    toggleBtn.addEventListener("click", () => {
-        const isLight = body.classList.contains("light");
-        setTheme(isLight ? "dark" : "light");
-    });
-})();
+            // Toggle theme on button click
+            toggleBtn.addEventListener("click", () => {
+                const isLight = body.classList.contains("light");
+                setTheme(isLight ? "dark" : "light");
+            });
+        })();
 
-const email = document.getElementById("email");
-const icon = document.getElementById("copyIcon");
-const message = document.getElementById("copyMessage");
+        const email = document.getElementById("email");
+        const icon = document.getElementById("copyIcon");
+        const message = document.getElementById("copyMessage");
 
-email.addEventListener("click", async () => {
+        email.addEventListener("click", async () => {
 
-    try {
-        await navigator.clipboard.writeText(email.innerText);
-        message.textContent = "copiado con éxito";
-        icon.setAttribute("name", "checkmark-outline");
+            try {
+                await navigator.clipboard.writeText(email.innerText);
+                message.textContent = "copiado con éxito";
+                /*icon.setAttribute("name", "checkmark-outline");*/
 
-        setTimeout(() => {
-            message.textContent = "";
-        }, 2000);
+                setTimeout(() => {
+                    message.textContent = "";
+                }, 2000);
 
-    } catch (err) {
-        message.textContent = "No se pudo copiar";
-    }
+            } catch (err) {
+                message.textContent = "No se pudo copiar";
+            }
 
-});
+        });

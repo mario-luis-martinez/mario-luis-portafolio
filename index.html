@@ -118,70 +118,7 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script>
-        (function () {
-            const body = document.body;
-            const toggleBtn = document.querySelector(".toggle-btn");
-            const THEME_KEY = "theme";
-
-            // Get system preference
-            function getSystemTheme() {
-                return window.matchMedia("(prefers-color-scheme: dark)").matches
-                    ? "dark"
-                    : "light";
-            }
-
-            // Apply theme class to body
-            function applyTheme(theme) {
-                if (theme === "light") {
-                    body.classList.add("light");
-                } else {
-                    body.classList.remove("light");
-                }
-            }
-
-            // Get preferred theme (localStorage > system)
-            function getPreferredTheme() {
-                return localStorage.getItem(THEME_KEY) || getSystemTheme();
-            }
-
-            // Set theme and persist
-            function setTheme(theme) {
-                applyTheme(theme);
-                localStorage.setItem(THEME_KEY, theme);
-            }
-
-            // Initialize theme on load
-            setTheme(getPreferredTheme());
-
-            // Toggle theme on button click
-            toggleBtn.addEventListener("click", () => {
-                const isLight = body.classList.contains("light");
-                setTheme(isLight ? "dark" : "light");
-            });
-        })();
-
-        const email = document.getElementById("email");
-        const icon = document.getElementById("copyIcon");
-        const message = document.getElementById("copyMessage");
-
-        email.addEventListener("click", async () => {
-
-            try {
-                await navigator.clipboard.writeText(email.innerText);
-                message.textContent = "copiado con éxito";
-                /*icon.setAttribute("name", "checkmark-outline");*/
-
-                setTimeout(() => {
-                    message.textContent = "";
-                }, 2000);
-
-            } catch (err) {
-                message.textContent = "No se pudo copiar";
-            }
-
-        });
-    </script>
+    <script src="/js/script.js"> </script>
 </body>
 
 </html>
