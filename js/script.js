@@ -49,7 +49,7 @@ email.addEventListener("click", async () => {
     try {
         await navigator.clipboard.writeText(email.innerText);
         message.textContent = "copiado con éxito";
-        /*icon.setAttribute("name", "checkmark-outline");*/
+        icon.setAttribute("name", "checkmark-outline");
 
         setTimeout(() => {
             message.textContent = "";
