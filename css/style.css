@@ -177,8 +177,7 @@ header {
     align-items: center;
     gap: 0.5rem;
     border: none;
-    background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
-    backdrop-filter: blur(10px);          /* The key property for the blur effect */
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
